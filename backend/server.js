@@ -3,21 +3,21 @@ const express = require('express');
 const cors = require('cors');
 const { SESClient, SendEmailCommand } = require("@aws-sdk/client-ses");
 
-// No need for dotenv.config(), Elastic Beanstalk handles this.
 const app = express();
 
-// Update CORS to dynamically handle the origin.
-// In a production environment, you should tighten this.
 app.use(cors({
     origin: process.env.CORS_ORIGIN || 'http://localhost:3000'
 }));
 app.use(express.json());
 
 // Configure the AWS SES V3 client
-// Credentials will be handled by the IAM role, no need to pass them explicitly.
 const sesClient = new SESClient({
     region: process.env.AWS_REGION,
-    // Note: No credentials needed here.
+    // This credentials block is required for Lightsail environment variables
+    credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    },
 });
 
 // In-memory store for OTPs. For production, use a database like Redis.
@@ -107,7 +107,7 @@ app.post('/api/send-otp', async (req, res) => {
             },
             Subject: { Charset: 'UTF-8', Data: 'Your Saviskar Festival Verification Code' },
         },
-        Source: process.env.SES_SOURCE_EMAIL || 'noreply@example.com',
+        Source: process.env.SES_SOURCE_EMAIL, // This should be a verified email in SES
     });
 
     try {
