@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saviskar Festival Registration</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="icon" href="assets/img/favicon.png" type="image/png">
+</head>
+<body>
+    <div id="notifications-panel" class="notifications-panel hidden"></div>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="Saviskar Festival">
+                <div class="header-greeting" id="header-greeting"></div>
+            </div>
+            <nav id="main-navbar" class="main-nav hidden">
+                <ul>
+                    <li><a href="#" class="nav-link" data-page="personal-info">Personal Info</a></li>
+                    <li><a href="#" id="events-nav-link" class="nav-link" data-page="events">Events</a></li>
+                    <li><a href="#" class="nav-link" data-page="accommodation">Accommodation</a></li>
+                    <li><a href="#" id="cart-nav-link" class="nav-link" data-page="cart">Cart</a></li>
+                    <li><a href="#" id="my-events-nav-link" class="nav-link hidden" data-page="my-events">My Events</a></li>
+                    <li><a href="#" id="faculty-dashboard-link" class="nav-link hidden" data-page="faculty-dashboard">Manage Students</a></li>
+                </ul>
+            </nav>
+            <div class="token-wrapper" id="logout-wrapper">
+                 <div id="logout-btn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </div>
+                <div class="token-id-display" id="token-id-display"></div>
+            </div>
+        </header>
+        <main class="main-content" id="main-content"></main>
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Saviskar Festival. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .events-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .auth-card, .form-card, .accommodation-card {
+        padding: 30px 20px;
+    }
+    
+    .form-col {
+        flex: 1 0 100%;
+    }
+    
+    .events-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .search-box {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .cart-item-price, .cart-item-remove {
+        margin-top: 15px;
+        align-self: flex-end;
+    }
+    
+    .footer-links a {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .vacancy-counter {
+        position: static;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .logout-btn {
+        margin-top: 15px;
+    }
+    
+    .auth-tabs {
+        flex-direction: column;
+    }
+    
+    .auth-tab {
+        text-align: center;
+    }
+    
+    .otp-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .otp-input {
+        margin: 0 5px 10px;
+    }
+    
+    .social-icons a {
+        margin: 0 5px;
+    }
+    
+    .category-tabs {
+        justify-content: center;
+    }
+    
+    .cart-actions {
+        text-align: center;
+    }
+    
+    .cart-total {
+        text-align: center;
+    }
+}
